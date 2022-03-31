@@ -74,7 +74,7 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                                   color: Colors.orangeAccent),
                               children: [
                                 TextSpan(
-                                  text: isSignupScreen ? ' 회원가입!!' : ' 오셨군요',
+                                  text: isSignupScreen ? ' 회원가입!!' : ' 또 오셨군요',
                                   style: TextStyle(
                                       letterSpacing: 1.0,
                                       fontSize: 25,
