@@ -449,6 +449,16 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                               final newUser = await _authentication.createUserWithEmailAndPassword(
                                   email: userEmail,
                                   password: userPassword);
+
+
+                              await FirebaseFirestore.instance.collection('user').doc(newUser.user!.uid)
+                                  .set(
+                                  {
+                                    'userName': userName,
+                                    'email': userEmail
+                                  }
+                              );
+
                               if (newUser.user != null){
                                 Navigator.push(context,
                                   MaterialPageRoute(builder: (context){
@@ -476,13 +486,6 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                                   password: userPassword
                               );
 
-                              await FirebaseFirestore.instance.collection('user').doc(newUser.user!.uid)
-                              .set(
-                                  {
-                                    'userName': userName,
-                                    'email': userEmail
-                                  }
-                              );
 
                               if (newUser.user != null){
                                 Navigator.push(context,
