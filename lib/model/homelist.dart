@@ -33,7 +33,7 @@ class HomeList {
       navigateScreen: DesignCourseHomeScreen(),
     ),
     HomeList(
-      imagePath: 'assets/design_course/design_course.png',
+      imagePath: 'assets/design_course/chat.jpg',
       navigateScreen: FirebaseTestScreen(),
     ),
   ];

@@ -6,7 +6,7 @@ import 'package:all_check/main.dart';
 import 'package:flutter/material.dart';
 import 'design_course_app_theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirebaseTestScreen extends StatefulWidget {
   @override
@@ -44,9 +44,7 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
         appBar: AppBar(
           title: const Text('로그인'),
         ),
-        body: ModalProgressHUD(
-          inAsyncCall: showprog,
-          child: GestureDetector(
+        body: GestureDetector(
             onTap: (){
               FocusScope.of(context).unfocus();
             },
@@ -59,7 +57,7 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                   left: 0,
                   child: Container(
                     height: 300,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: AssetImage('assets/images/login3.jpg'),
                           fit: BoxFit.fill),
@@ -72,14 +70,14 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                           RichText(
                             text: TextSpan(
                                 text: '환영합니다.',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     letterSpacing: 1.0,
                                     fontSize: 25,
                                     color: Colors.orangeAccent),
                                 children: [
                                   TextSpan(
                                     text: isSignupScreen ? ' 회원가입!!' : ' 또 오셨군요',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         letterSpacing: 1.0,
                                         fontSize: 25,
                                         color: Colors.orange,
@@ -87,12 +85,12 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                                   ),
                                 ]),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 5.0,
                           ),
                           Text(
                             isSignupScreen ? '회원가입 진행' : '로그인 진행',
-                            style: TextStyle(
+                            style: const TextStyle(
                               letterSpacing: 1.0,
                               color: Colors.white,
                             ),
@@ -475,7 +473,16 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                             try {
                               final newUser = await _authentication.signInWithEmailAndPassword(
                                   email: userEmail,
-                                  password: userPassword);
+                                  password: userPassword
+                              );
+
+                              await FirebaseFirestore.instance.collection('user').doc(newUser.user!.uid)
+                              .set(
+                                  {
+                                    'userName': userName,
+                                    'email': userEmail
+                                  }
+                              );
 
                               if (newUser.user != null){
                                 Navigator.push(context,
@@ -547,7 +554,7 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
             ),
           ),
         ),
-      ),
+
     );
   }
 
@@ -719,7 +726,7 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                       child: Container(
                         padding: const EdgeInsets.only(left: 16, right: 16),
                         child: TextFormField(
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontFamily: 'WorkSans',
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
@@ -772,7 +779,7 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: const <Widget>[
                 Text(
                   'Choose your',
                   textAlign: TextAlign.left,
