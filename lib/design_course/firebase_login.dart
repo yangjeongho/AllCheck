@@ -333,22 +333,23 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                                 child: Column(
                                   children: [
                                     TextFormField(
+                                      keyboardType: TextInputType.emailAddress,
                                       key: const ValueKey(4),
-                                      validator: (value){
-                                        if(value!.isEmpty || value.length < 4){
-                                          return '4자리 이상 입력하세요';
+                                      validator: (value) {
+                                        if(value!.isEmpty|| !value.contains('@')){
+                                          return '유효한 메일 정보를 등록하세요.';
                                         }
                                         return null;
                                       },
                                       onSaved: (value){
-                                        userName=value!;
+                                        userEmail = value!;
                                       },
                                       onChanged: (value){
-                                        userName = value;
+                                        userEmail = value;
                                       },
                                       decoration: const InputDecoration(
-                                          prefixIcon:   Icon(
-                                            Icons.account_circle,
+                                          prefixIcon: Icon(
+                                            Icons.email,
                                             color: DesignCourseAppTheme.iconColor,
                                           ),
                                           enabledBorder: OutlineInputBorder(
@@ -365,7 +366,7 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(35.0)),
                                           ),
-                                          hintText: 'User Name',
+                                          hintText: 'email',
                                           hintStyle: TextStyle(
                                               fontSize: 14,
                                               color: DesignCourseAppTheme.textColor1),
@@ -375,7 +376,8 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                                       height: 8,
                                     ),
                                     TextFormField(
-                                      key: const ValueKey(5),
+                                      obscureText: true,
+                                      key: const ValueKey(6),
                                       validator: (value){
                                         if(value!.isEmpty|| value.length<6){
                                           return '패스워드은 6자리 이상이여야 합니다.';
