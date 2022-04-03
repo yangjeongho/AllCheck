@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../navigation_home_screen.dart';
 import 'chat/message.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -44,7 +45,8 @@ class _ChatScreenState extends State<ChatScreen> {
             IconButton(
               onPressed: () {
                 _authentication.signOut();
-                Navigator.pop(context);
+                //Navigator.pop(context);
+                NavigationHomeScreen();
               },
               icon: const Icon(
                 Icons.exit_to_app_sharp,
