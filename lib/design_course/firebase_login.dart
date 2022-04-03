@@ -462,11 +462,11 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
                               );
 
                               if (newUser.user != null){
-                                Navigator.push(context,
-                                  MaterialPageRoute(builder: (context){
-                                    return ChatScreen();
-                                  }),
-                                );
+                                // Navigator.push(context,
+                                //   MaterialPageRoute(builder: (context){
+                                //     return ChatScreen();
+                                //   }),
+                                // );
 
                               }
 

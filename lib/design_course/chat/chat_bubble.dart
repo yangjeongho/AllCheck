@@ -13,10 +13,12 @@ class ChatBubble extends StatelessWidget {
       mainAxisAlignment: isMe ? MainAxisAlignment.end : MainAxisAlignment.start,
       children: [
         Container(
-          child: Image.asset(
-            isMe ? 'assets/images/man.png':image,
-            fit: BoxFit.cover,
-            height: 30,
+          child: CircleAvatar(
+            child : Image.asset(isMe ? 'assets/images/man.png':image,
+                                  height: 30,
+                                ),
+            radius: 18,
+            backgroundColor: Colors.grey[600],
           ),
         ),
         Container(

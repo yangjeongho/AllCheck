@@ -43,11 +43,12 @@ class MyApp extends StatelessWidget {
       // home: NavigationHomeScreen(),
       home: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
+
         builder: (context, snapshot){
           //return ChatScreen();
-          //if(snapshot.hasData){
-          //  return ChatScreen();
-          //}
+          if(snapshot.hasData){
+            return ChatScreen();
+          }
           return NavigationHomeScreen();
         },
       ),
