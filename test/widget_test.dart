@@ -7,12 +7,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:all_check/main.dart';
 
-void main() {
+void main() async{
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
+    //2022.04.03 왜 실행하는데 오류가 날까?
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
     await tester.pumpWidget( const MyApp());
 
     // Verify that our counter starts at 0.
