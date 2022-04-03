@@ -8,7 +8,6 @@ class Messages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final user = FirebaseAuth.instance.currentUser;
 
     return StreamBuilder(
@@ -24,13 +23,33 @@ class Messages extends StatelessWidget {
           );
         }
         final chatDocs = snapshot.data!.docs;
+
+
+
         return ListView.builder(
             reverse: true,
             itemCount: chatDocs.length,
             itemBuilder: (context, index) {
               return ChatBubble(chatDocs[index]['text'],
-                                chatDocs[index]['userId'].toString() == user!.uid);
+                                chatDocs[index]['userId'].toString() == user!.uid,
+                                'assets/images/woman.png')
+              ;
             });
+
+        // return SliverFixedExtentList(
+        //     itemExtent: 50.0,
+        //     //childCount :  chatDocs.length,
+        //     delegate:
+        //     SliverChildBuilderDelegate((context, int index) {
+        //       return ChatBubble(chatDocs[index]['text'],
+        //                         chatDocs[index]['userId'].toString() == user!.uid,
+        //                         'assets/images/woman.png');
+        //     },
+        //     childCount :  chatDocs.length,
+        //   )
+        //   ,
+        // );
+
       },
     );
   }

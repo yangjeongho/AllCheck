@@ -24,7 +24,7 @@ class _FirebaseTestScreenState extends State<FirebaseTestScreen> {
   String userEmail = '';
   String userPassword = '';
 
-  bool isSignupScreen = true;
+  bool isSignupScreen = false;
   bool showprog = false;
   final _formKey = GlobalKey<FormState>();
 
