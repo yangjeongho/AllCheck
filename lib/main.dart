@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:all_check/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'design_course/chat_screen.dart';
 import 'model/todolist.dart';
 import 'navigation_home_screen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       systemNavigationBarDividerColor: Colors.transparent,
       systemNavigationBarIconBrightness: Brightness.dark,
     ));
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

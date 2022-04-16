@@ -3,7 +3,8 @@ import 'package:all_check/fitness_app/fitness_app_home_screen.dart';
 import 'package:all_check/hotel_booking/hotel_home_screen.dart';
 import 'package:all_check/introduction_animation/introduction_animation_screen.dart';
 import 'package:flutter/widgets.dart';
-
+import '../custom_drawer/myCheck.dart';
+import '../custom_drawer/myUi.dart';
 import '../design_course/firebase_login.dart';
 
 class HomeList {
@@ -35,6 +36,10 @@ class HomeList {
     HomeList(
       imagePath: 'assets/design_course/chat.jpg',
       navigateScreen: FirebaseTestScreen(),
+    ),
+    HomeList(
+      imagePath: 'assets/design_course/test.jpg',
+      navigateScreen: RiveScreen(),
     ),
   ];
 }
