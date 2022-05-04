@@ -4,6 +4,7 @@ import 'package:all_check/hotel_booking/hotel_home_screen.dart';
 import 'package:all_check/introduction_animation/introduction_animation_screen.dart';
 import 'package:flutter/widgets.dart';
 import '../custom_drawer/myCheck.dart';
+import '../custom_drawer/myTest.dart';
 import '../custom_drawer/myUi.dart';
 import '../design_course/firebase_login.dart';
 
@@ -40,6 +41,10 @@ class HomeList {
     HomeList(
       imagePath: 'assets/design_course/test.jpg',
       navigateScreen: RiveScreen(),
+    ),
+    HomeList(
+      imagePath: 'assets/design_course/test.jpg',
+      navigateScreen: ExampleStateMachine(),
     ),
   ];
 }

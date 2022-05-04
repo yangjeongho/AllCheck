@@ -1,8 +1,10 @@
+import 'package:all_check/design_course/chat/gogo.dart';
 import 'package:all_check/hotel_booking/hotel_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../design_course/chat/myCheckbox.dart';
 import 'model/hotel_list_data.dart';
 
 class HotelListView extends StatelessWidget {
@@ -50,8 +52,11 @@ class HotelListView extends StatelessWidget {
                     borderRadius: const BorderRadius.all(Radius.circular(16.0)),
                     child: Stack(
                       children: <Widget>[
+
                         Column(
                           children: <Widget>[
+                            //MyCheckbox(),
+                            GoGo(isChk: 1),
                             AspectRatio(
                               aspectRatio: 2,
                               child: Image.asset(
