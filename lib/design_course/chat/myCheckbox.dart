@@ -92,8 +92,8 @@ class _MyCheckboxState extends State<MyCheckbox> {
               child: Column(
                 children: [
                   Container(
-                      width: 40,
-                      height: 40,
+                      width: 25,
+                      height: 25,
                       child : Container(
                         child: Rive(
                           artboard: _riveArtboard!,

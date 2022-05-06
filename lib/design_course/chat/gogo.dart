@@ -128,8 +128,8 @@ class _GoGoState extends State<GoGo> {
             child: Column(
               children: [
                 Container(
-                    width: 50,
-                    height: 50,
+                    width: 35,
+                    height: 35,
                     child : Container(
                       child: Rive(
                         artboard: _riveArtboard!,

@@ -27,7 +27,7 @@ class _ExampleStateMachineState extends State<ExampleStateMachine> {
       ),
       body:
          Padding(
-           padding: const EdgeInsets.all(8.0),
+           padding: const EdgeInsets.all(1.0),
            child: Column(
              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -52,9 +52,11 @@ class _ExampleStateMachineState extends State<ExampleStateMachine> {
                   // )
                   Row(children: [
                     GoGo(isChk: 0),
-                      Text("5/8 출발 "),
-                     GoGo(isChk: 1),
-                    Text("5/9 공증사무소 ")
+                    Text("출발 test 가자 우리 할 수 있다.!!! "),
+                    // GoGo(isChk: 1),
+                    // Text("공증사무소 "),
+                    // GoGo(isChk: 1),
+                    // Text("text ")
                     ],
                   ),
 
@@ -75,7 +77,31 @@ class _ExampleStateMachineState extends State<ExampleStateMachine> {
                     Text("Test 5")
                   ],
                   ),
-
+                  Row(children: [
+                    MyCheckbox(),
+                    Text("Test 6")
+                  ],
+                  ),                  Row(children: [
+                    MyCheckbox(),
+                    Text("Test 7")
+                  ],
+                  ),                  Row(children: [
+                    MyCheckbox(),
+                    Text("Test 8")
+                  ],
+                  ),                  Row(children: [
+                    MyCheckbox(),
+                    Text("Test 9")
+                  ],
+                  ),                  Row(children: [
+                    MyCheckbox(),
+                    Text("Test 10")
+                  ],
+                  ),                  Row(children: [
+                    MyCheckbox(),
+                    Text("Test 11")
+                  ],
+                  ),
                 ],
               ),
          ),

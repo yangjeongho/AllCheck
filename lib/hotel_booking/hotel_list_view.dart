@@ -56,7 +56,7 @@ class HotelListView extends StatelessWidget {
                         Column(
                           children: <Widget>[
                             //MyCheckbox(),
-                            GoGo(isChk: 1),
+                            //GoGo(isChk: 1),
                             AspectRatio(
                               aspectRatio: 2,
                               child: Image.asset(
@@ -71,6 +71,7 @@ class HotelListView extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
+
                                   Expanded(
                                     child: Container(
                                       child: Padding(
@@ -82,6 +83,13 @@ class HotelListView extends StatelessWidget {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: <Widget>[
+                                            Row(
+                                              children :[
+                                              GoGo(isChk: 1),
+                                              //GoGo(isChk: 0),
+                                              //GoGo(isChk: 1),
+                                              ]
+                                            ),
                                             Text(
                                               hotelData!.titleTxt,
                                               textAlign: TextAlign.left,
